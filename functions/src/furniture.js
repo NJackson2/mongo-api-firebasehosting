@@ -1,4 +1,5 @@
 import { ObjectId } from "mongodb";
+// Mongo-specfic - uniquite identifuer for all docs int he db
 import dbConnect from "./dbConnect.js";
 
 
@@ -13,7 +14,7 @@ export async function getAllFurniture(req, res) {
             return;
         });
     // send back the array of furniture
-    res.set('Cache-Control', 'public, max-age=300, s-maxage = 600')
+    res.set('Cache-Control', 'public, max-age=300, s-maxage = 600') //this is example of using cache - not required
     res.send(collection);
 }
 

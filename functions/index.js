@@ -1,5 +1,7 @@
 import functions from 'firebase-functions'
+// use this above line if hosting on firebase
 import express from 'express'
+// bringing in express from the node_modules
 import cors from 'cors'
 
 // not a default so need curly braces below
@@ -8,6 +10,7 @@ import { getAllFurniture, addNewFurniture, updateFurniture } from './src/furnitu
 const app = express()
 app.use(cors())
 app.use(express.json())
+//
 
 app.get('/furniture', getAllFurniture)
 app.post('/furniture', addNewFurniture)
